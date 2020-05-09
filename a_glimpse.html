@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A Glimpse into Our Past and Our Future</title>
+    <style>
+      a {
+        position: absolute;
+        color: white;
+        opacity: 0.75;
+        z-index: 999;
+      }
+/* style: id */
+      #cam_container {
+        position: fixed;
+        min-width: 100vw;
+        min-height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        z-index: -1;
+      }
+      #cam_element {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #text_container {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background-color: black;
+        opacity: 0;
+      }
+      #text_element {
+        position: absolute;
+        width: 100vw;
+        object-fit: fill;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+/* style: class */
+      .fade-in {
+        animation-name: fade-in-css;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+      }
+/* style: animation */
+      @keyframes fade-in-css {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+    </style>
+  </head>
+  <body>
+<!-- body: home button -->
+    <div id="home">
+      <a href="index.html">Back to Home</a>
+    </div>
+<!-- body: web-cam -->
+    <div id="cam_container">
+      <video autoplay="true" id="cam_element" value="true" onloadedmetadata="text_function()">
+      </video>
+    </div>
+<!-- body: text -->
+    <div id="text_container">
+      <!-- text video -->
+      <video loop autoplay muted controls id="text_element">
+        <source type="video/mp4" src="ag_1080.mp4"> </source>
+      </video>
+    </div>
+<!-- script -->
+    <script>
+    //webcam function
+    var video = document.querySelector("#cam_element");
+
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({video:true})
+      .then(function (stream) {
+        video.srcObject = stream;
+        document.querySelector("cam_container").value="false";
+      })
+      .catch(function (err0r) {
+        console.log("Something went wrong!");
+      });
+    }
+    //fade in animation
+    function fadein() {
+      var calendar = document.getElementById("text_container");
+      calendar.classList.add("fade-in");
+    }
+    function text_function() {
+      setTimeout(function () {
+        fadein();
+      }, 7000);
+    }
+    </script>
+  </body>
+</html>
