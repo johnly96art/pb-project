@@ -57,41 +57,18 @@
         0% {opacity: 0;}
         100% {opacity: 1;}
       }
-      #overall_text {
-        color: white;
+      #overall_text_parent {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
       }
-      #what {
+      #overall_text {
+        color: white;
+        font-size: 100px;
+        font-weight: bolder;
         position: fixed;
-        width: 20vw;
         text-align: center;
-        left: 0;
-      }
-      #ever {
-        position: fixed;
-        width: 20vw;
-        text-align: center;
-        left: 20vw;
-      }
-      #happened {
-        position: fixed;
-        width: 20vw;
-        text-align: center;
-        left: 40vw;
-      }
-      #to {
-        position: fixed;
-        width: 20vw;
-        text-align: center;
-        left: 60vw;
-      }
-      #you {
-        position: fixed;
-        width: 20vw;
-        text-align: center;
-        left: 80vw;
+        width: 100vw;
       }
       #w1 {
         opacity: 0;
@@ -183,22 +160,14 @@
         </div>
     <!-- body: text -->
         <div id="text_container">
-          <div id="overall_text">
-              <div id="what">
-                <span id="w1">W</span><span id="h2">h</span><span id="a3">a</span><span id="t4">t</span>
-              </div>
-              <div id="ever">
-                <span id="e5">e</span><span id="v6">v</span><span id="e7">e</span><span id="r8">r</span>
-              </div>
-              <div id="happened">
-                <span id="h9">h</span><span id="a10">a</span><span id="p11">p</span><span id="p12">p</span><span id="e13">e</span><span id="n14">n</span><span id="e15">e</span><span id="d16">d</span>
-              </div>
-              <div id="to">
-                <span id="t17">t</span><span id="o18">o</span>
-              </div>
-              <div id="you">
-                <span id="y19">y</span><span id="o20">o</span><span id="u21">u</span><span id="q22">?</span>
-              </div>
+          <div id="overall_text_parent">
+            <div id="overall_text">
+              <span id="w1">W</span><span id="h2">h</span><span id="a3">a</span><span id="t4">t</span>
+              <span id="e5">e</span><span id="v6">v</span><span id="e7">e</span><span id="r8">r</span>
+              <span id="h9">h</span><span id="a10">a</span><span id="p11">p</span><span id="p12">p</span><span id="e13">e</span><span id="n14">n</span><span id="e15">e</span><span id="d16">d</span>
+              <span id="t17">t</span><span id="o18">o</span>
+              <span id="y19">y</span><span id="o20">o</span><span id="u21">u</span><span id="q22">?</span>
+            </div>
           </div>
         </div>
         <script>
