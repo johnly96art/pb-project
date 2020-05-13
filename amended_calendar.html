@@ -4,7 +4,14 @@
     <meta charset="utf-8">
     <title>Amended Calendar</title>
     <style>
-/* style: id */
+/* style: home button */
+      a {
+        position: absolute;
+        color: white;
+        opacity: 0.75;
+        z-index: 999;
+      }
+/* style: camera */
       #cam_container {
         position: fixed;
         min-width: 100vw;
@@ -23,42 +30,35 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
+/* style: calendar */
       #calendar_container {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 50%;
+        position: absolute;
         left: 50%;
+        top: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        background-color: white;
         opacity: 0;
       }
-      #calendar_element {
-        position: absolute;
-        width: 100vw;
-        object-fit: fill;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
+      #calendar_img {
+        filter: saturate(100%);
       }
-      a {
-        position: absolute;
-        color: black;
-        opacity: 0.75;
-        z-index: 999;
-      }
-/* style: class */
-      .fade-in {
-        animation-name: fade-in-css;
+      .fadein_bg {
+        animation-name: fadein_bg;
         animation-duration: 3s;
         animation-fill-mode: forwards;
       }
-/* style: animation */
-      @keyframes fade-in-css {
+      @keyframes fadein_bg {
         0% {opacity: 0;}
         100% {opacity: 1;}
+      }
+      .hue_rotate {
+        animation-name: hue_rotate;
+        animation-duration: 90s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes hue_rotate {
+        0% {filter: hue-rotate(0deg);}
+        100% {filter:hue-rotate(360deg);}
       }
     </style>
   </head>
@@ -67,17 +67,14 @@
     <div id="home">
       <a href="index.html">Back to Home</a>
     </div>
-<!-- body: web-cam -->
+<!-- body: camera -->
     <div id="cam_container">
       <video autoplay="true" id="cam_element" value="true" onloadedmetadata="calendar_function()">
       </video>
     </div>
 <!-- body: calendar -->
     <div id="calendar_container">
-      <!-- calendar video -->
-      <video loop autoplay muted controls id="calendar_element">
-        <source type="video/mp4" src="ac_1080.mp4"> </source>
-      </video>
+      <img id="calendar_img" src="calendar.png">
     </div>
 <!-- script -->
     <script>
@@ -94,15 +91,21 @@
         console.log("Something went wrong!");
       });
     }
-    //fade in animation
-    function fadein() {
-      var calendar = document.getElementById("calendar_container");
-      calendar.classList.add("fade-in");
+    //fade in for background
+    function fadein_bg() {
+      document.getElementById("calendar_container").classList.add("fadein_bg");
+    }
+    //hue rotation
+    function hue_rotate() {
+      document.getElementById("calendar_img").classList.add("hue_rotate");
     }
     function calendar_function() {
       setTimeout(function () {
-        fadein();
+        fadein_bg();
       }, 5000);
+      setTimeout(function () {
+        hue_rotate();
+      }, 6500);
     }
     </script>
   </body>
