@@ -47,7 +47,7 @@
       }
       #calendar_img {
         position: relative;
-        filter: saturate(100%);
+        filter: saturate(100%) hue-rotate(240deg);
         height: 100vh;
       }
       .fadein_bg {
@@ -65,8 +65,9 @@
         animation-iteration-count: infinite;
       }
       @keyframes hue_rotate {
-        0% {filter: hue-rotate(0deg);}
-        100% {filter:hue-rotate(360deg);}
+        0% {filter: hue-rotate(240deg);}
+        50% {filter: hue-rotate(80deg);}
+        100% {filter:hue-rotate(240deg);}
       }
     </style>
   </head>
