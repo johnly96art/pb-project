@@ -7,6 +7,7 @@
       body {
         font-family: sans-serif;
         overflow: hidden;
+        background-color: #333333;
       }
 /* style: home button */
       a {
@@ -47,7 +48,7 @@
       }
       #calendar_img {
         position: relative;
-        filter: saturate(100%) hue-rotate(240deg);
+        filter: saturate(100%) brightness(0%);
         height: 100vh;
       }
       .fadein_bg {
@@ -65,9 +66,9 @@
         animation-iteration-count: infinite;
       }
       @keyframes hue_rotate {
-        0% {filter: hue-rotate(240deg);}
-        50% {filter: hue-rotate(80deg);}
-        100% {filter:hue-rotate(240deg);}
+        0% {filter: saturate(200%) hue-rotate(240deg) brightness(0%);}
+        50% {filter: saturate(200%) hue-rotate(240deg) brightness(100%);}
+        100% {filter: saturate(200%) hue-rotate(240deg) brightness(0%);}
       }
     </style>
   </head>

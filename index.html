@@ -2,12 +2,103 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Paul Bojack</title>
+    <title></title>
+    <style>
+      body {
+        font-family: helvetica;
+        background-color: #333333;
+        color: white;
+        margin-top: -10px;
+        font-size: 1.5em;
+        opacity: 0.95;
+        overflow: hidden;
+      }
+      a {
+        color: white;
+      }
+      #nav {
+        width: 100vw;
+        height: 10vh;
+        padding: 5px;
+      }
+      .projects {
+        width: 15vw;
+        height: 30vh;
+        padding: 5vw;
+      }
+      #left {
+        position: absolute;
+        left: 12.5vw;
+        top: 30vh;
+        border: 1px solid white;
+      }
+      #left:hover {
+        background-color: #414141;
+      }
+      #left_contents {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      #right {
+        position: absolute;
+        left: 62.5vw;
+        top: 30vh;
+        border: 1px solid white;
+      }
+      #right:hover {
+        background-color: #414141;
+      }
+      #right_contents {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      #browser_support {
+
+      }
+      @media screen and (max-width:768px) {
+        .projects {
+          width: 70vw;
+          height: 30vh;
+        }
+        #left {
+          position: absolute;
+          left: 10vw;
+          top: 15vh;
+        }
+        #right {
+          position: absolute;
+          left: 10vw;
+          top: 55vh;
+        }
+      }
+    </style>
   </head>
   <body>
-    <b>Paul Bojack</b><br>
-    <br>
-    <u><a href="amended_calendar.html">Amended Calendar</a></u> (2020)<br>
-    <u><a href="a_glimpse.html">A Glimpse in Our Past and Our Future</a></u> (2020)<br>
+    <div id="nav">
+      <h1>Paul Bojack</h1>
+    </div>
+    <a href="amended_calendar.html">
+      <div class="projects" id="left">
+        <div id="left_contents">
+          Amended Calendar
+        </div>
+      </div>
+    </a>
+    <a href="a_glimpse.html">
+      <div class="projects" id="right">
+        <div id="right_contents">
+          A Glimpse Into Our Past and Our Future
+        </div>
+      </div>
+    </a>
+    <div id="browser_support">
+      <!-- Following projects are designed to be viewed on desktop. -->
+    </div>
   </body>
 </html>

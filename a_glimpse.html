@@ -60,6 +60,7 @@
       #overall_text {
         color: white;
         position: absolute;
+        color: #808080;
         top: 50%;
         transform: translateY(-50%);
       }
@@ -161,13 +162,23 @@
       }
       .fadein_txt{
         animation-name: fadein_txt;
-        animation-duration: 1s;
+        animation-duration: 0.05s;
         animation-fill-mode: forwards;
         animation-timing-function: ease;
       }
       @keyframes fadein_txt {
         0% {opacity: 0;}
         100% {opacity: 1;}
+      }
+      .fadeout_txt{
+        animation-name: fadeout_txt;
+        animation-duration: /*ask paul how long does he want it to be*/;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+      }
+      @@keyframes fadeout_txt {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
       }
     </style>
   </head>
@@ -286,7 +297,34 @@
         function fadein_22() {
           document.getElementById("q22").classList.add("fadein_txt");
         }
+        function fadeout_master() {
+          document.getElementById("w1").classList.add("fadeout_txt");
+          document.getElementById("h2").classList.add("fadeout_txt");
+          document.getElementById("a3").classList.add("fadeout_txt");
+          document.getElementById("t4").classList.add("fadeout_txt");
+          document.getElementById("e5").classList.add("fadeout_txt");
+          document.getElementById("v6").classList.add("fadeout_txt");
+          document.getElementById("e7").classList.add("fadeout_txt");
+          document.getElementById("r8").classList.add("fadeout_txt");
+          document.getElementById("h9").classList.add("fadeout_txt");
+          document.getElementById("a10").classList.add("fadeout_txt");
+          document.getElementById("p11").classList.add("fadeout_txt");
+          document.getElementById("p12").classList.add("fadeout_txt");
+          document.getElementById("e13").classList.add("fadeout_txt");
+          document.getElementById("n14").classList.add("fadeout_txt");
+          document.getElementById("e15").classList.add("fadeout_txt");
+          document.getElementById("d16").classList.add("fadeout_txt");
+          document.getElementById("t17").classList.add("fadeout_txt");
+          document.getElementById("o18").classList.add("fadeout_txt");
+          document.getElementById("y19").classList.add("fadeout_txt");
+          document.getElementById("o20").classList.add("fadeout_txt");
+          document.getElementById("u21").classList.add("fadeout_txt");
+          document.getElementById("q22").classList.add("fadeout_txt");
+        }
         function fadein_master() {
+          setTimeout (function() {
+            fadeout_master();
+          }, 23000 /* +15 sec 37000 */);
           setTimeout(function() {
             fadein_1();
           }, 22000);
