@@ -49,6 +49,7 @@
         background-color: black;
         opacity: 0;
       }
+/* background fadein */
       .fadein_bg {
         animation-name: fadein_bg;
         animation-duration: 3s;
@@ -58,6 +59,7 @@
         0% {opacity: 0;}
         100% {opacity: 1;}
       }
+/* text style & structuring */
       #overall_text {
         color: white;
         position: absolute;
@@ -95,89 +97,79 @@
         text-align: center;
         left: 80vw;
       }
+/* individual letters style & animation */
       #w1 {
-        opacity: 0;
+        visibility: hidden;
       }
       #h2 {
-        opacity: 0;
+        visibility: hidden;
       }
       #a3 {
-        opacity: 0;
+        visibility: hidden;
       }
       #t4 {
-        opacity: 0;
+        visibility: hidden;
       }
       #e5 {
-        opacity: 0;
+        visibility: hidden;
       }
       #v6 {
-        opacity: 0;
+        visibility: hidden;
       }
       #e7 {
-        opacity: 0;
+        visibility: hidden;
       }
       #r8 {
-        opacity: 0;
+        visibility: hidden;
       }
       #h9 {
-        opacity: 0;
+        visibility: hidden;
       }
       #a10 {
-        opacity: 0;
+        visibility: hidden;
       }
       #p11 {
-        opacity: 0;
+        visibility: hidden;
       }
       #p12 {
-        opacity: 0;
+        visibility: hidden;
       }
       #e13 {
-        opacity: 0;
+        visibility: hidden;
       }
       #n14 {
-        opacity: 0;
+        visibility: hidden;
       }
       #e15 {
-        opacity: 0;
+        visibility: hidden;
       }
       #d16 {
-        opacity: 0;
+        visibility: hidden;
       }
       #t17 {
-        opacity: 0;
+        visibility: hidden;
       }
       #o18 {
-        opacity: 0;
+        visibility: hidden;
       }
       #y19 {
-        opacity: 0;
+        visibility: hidden;
       }
       #o20 {
-        opacity: 0;
+        visibility: hidden;
       }
       #u21 {
-        opacity: 0;
+        visibility: hidden;
       }
       #q22 {
-        opacity: 0;
-      }
-      .fadein_txt{
-        animation-name: fadein_txt;
-        animation-duration: 0.05s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease;
-      }
-      @keyframes fadein_txt {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
+        visibility: hidden;
       }
       .fadeout_txt{
         animation-name: fadeout_txt;
-        animation-duration: /*ask paul how long does he want it to be*/;
+        animation-duration: 15s;
         animation-fill-mode: forwards;
-        animation-timing-function: ease;
       }
-      @@keyframes fadeout_txt {
+      @keyframes fadeout_txt {
         0% {opacity: 1;}
         100% {opacity: 0;}
       }
@@ -231,74 +223,75 @@
         function fadein_bg() {
           document.getElementById("text_container").classList.add("fadein_bg");
         }
-        //fade in for text
+        //text pop-ups
         function fadein_1() {
-          document.getElementById("w1").classList.add("fadein_txt");
+          document.getElementById("w1").style.visibility="visible";
         }
         function fadein_2() {
-          document.getElementById("h2").classList.add("fadein_txt");
+          document.getElementById("h2").style.visibility="visible";
         }
         function fadein_3() {
-          document.getElementById("a3").classList.add("fadein_txt");
+          document.getElementById("a3").style.visibility="visible";
         }
         function fadein_4() {
-          document.getElementById("t4").classList.add("fadein_txt");
+          document.getElementById("t4").style.visibility="visible";
         }
         function fadein_5() {
-          document.getElementById("e5").classList.add("fadein_txt");
+          document.getElementById("e5").style.visibility="visible";
         }
         function fadein_6() {
-          document.getElementById("v6").classList.add("fadein_txt");
+          document.getElementById("v6").style.visibility="visible";
         }
         function fadein_7() {
-          document.getElementById("e7").classList.add("fadein_txt");
+          document.getElementById("e7").style.visibility="visible";
         }
         function fadein_8() {
-          document.getElementById("r8").classList.add("fadein_txt");
+          document.getElementById("r8").style.visibility="visible";
         }
         function fadein_9() {
-          document.getElementById("h9").classList.add("fadein_txt");
+          document.getElementById("h9").style.visibility="visible";
         }
         function fadein_10() {
-          document.getElementById("a10").classList.add("fadein_txt");
+          document.getElementById("a10").style.visibility="visible";
         }
         function fadein_11() {
-          document.getElementById("p11").classList.add("fadein_txt");
+          document.getElementById("p11").style.visibility="visible";
         }
         function fadein_12() {
-          document.getElementById("p12").classList.add("fadein_txt");
+          document.getElementById("p12").style.visibility="visible";
         }
         function fadein_13() {
-          document.getElementById("e13").classList.add("fadein_txt");
+          document.getElementById("e13").style.visibility="visible";
         }
         function fadein_14() {
-          document.getElementById("n14").classList.add("fadein_txt");
+          document.getElementById("n14").style.visibility="visible";
         }
         function fadein_15() {
-          document.getElementById("e15").classList.add("fadein_txt");
+          document.getElementById("e15").style.visibility="visible";
         }
         function fadein_16() {
-          document.getElementById("d16").classList.add("fadein_txt");
+          document.getElementById("d16").style.visibility="visible";
         }
         function fadein_17() {
-          document.getElementById("t17").classList.add("fadein_txt");
+          document.getElementById("t17").style.visibility="visible";
         }
         function fadein_18() {
-          document.getElementById("o18").classList.add("fadein_txt");
+          document.getElementById("o18").style.visibility="visible";
         }
         function fadein_19() {
-          document.getElementById("y19").classList.add("fadein_txt");
+          document.getElementById("y19").style.visibility="visible";
         }
         function fadein_20() {
-          document.getElementById("o20").classList.add("fadein_txt");
+          document.getElementById("o20").style.visibility="visible";
         }
         function fadein_21() {
-          document.getElementById("u21").classList.add("fadein_txt");
+          document.getElementById("u21").style.visibility="visible";
         }
         function fadein_22() {
-          document.getElementById("q22").classList.add("fadein_txt");
+          document.getElementById("q22").style.visibility="visible";
         }
         function fadeout_master() {
+          document.getElementById("w1").classList.add("fadeout_txt");
           document.getElementById("w1").classList.add("fadeout_txt");
           document.getElementById("h2").classList.add("fadeout_txt");
           document.getElementById("a3").classList.add("fadeout_txt");
