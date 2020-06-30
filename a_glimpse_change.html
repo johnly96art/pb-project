@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Only Five Summers Left</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+      body {
+        font-family: 'Roboto';
+        overflow: hidden;
+        background-color: #333333;
+      }
+/* style: home button */
+      a {
+        position: absolute;
+        color: white;
+        opacity: 0.5;
+        z-index: 999;
+        text-shadow: 2px 2px 3px black;
+        text-decoration: none;
+      }
+/* style: camera */
+      #cam_container {
+        position: fixed;
+        min-width: 100vw;
+        min-height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        z-index: -1;
+      }
+      #cam_element {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+/* style: text*/
+      #text_container {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background-color: black;
+        opacity: 0;
+      }
+/* background fadein */
+      .fadein_bg {
+        animation-name: fadein_bg;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fadein_bg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+/* text style & structuring */
+      #overall_text {
+        color: white;
+        position: absolute;
+        color: #808080;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #word1 {
+        position: fixed;
+        width: 20vw;
+        text-align: center;
+        left: 0;
+      }
+      #word2 {
+        position: fixed;
+        width: 20vw;
+        text-align: center;
+        left: 20vw;
+      }
+      #word3 {
+        position: fixed;
+        width: 20vw;
+        text-align: center;
+        left: 40vw;
+      }
+      #word4 {
+        position: fixed;
+        width: 20vw;
+        text-align: center;
+        left: 60vw;
+      }
+      #word5 {
+        position: fixed;
+        width: 20vw;
+        text-align: center;
+        left: 80vw;
+      }
+/* individual letters style & animation */
+      #t1 {
+        opacity: 0;
+      }
+      #t2 {
+        opacity: 0;
+      }
+      #t3 {
+        opacity: 0;
+      }
+      #t4 {
+        opacity: 0;
+      }
+      #t5 {
+        opacity: 0;
+      }
+      #t6 {
+        opacity: 0;
+      }
+      #t7 {
+        opacity: 0;
+      }
+      #t8 {
+        opacity: 0;
+      }
+      #t9 {
+        opacity: 0;
+      }
+      #t10 {
+        opacity: 0;
+      }
+      #t11 {
+        opacity: 0;
+      }
+      #t12 {
+        opacity: 0;
+      }
+      #t13 {
+        opacity: 0;
+      }
+      #t14 {
+        opacity: 0;
+      }
+      #t15 {
+        opacity: 0;
+      }
+      #t16 {
+        opacity: 0;
+      }
+      #t17 {
+        opacity: 0;
+      }
+      #t18 {
+        opacity: 0;
+      }
+      #t19 {
+        opacity: 0;
+      }
+      #t20 {
+        opacity: 0;
+      }
+      #t21 {
+        opacity: 0;
+      }
+      .fadeout_txt{
+        animation-name: fadeout_txt;
+        animation-duration: 15s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fadeout_txt {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+      }
+    </style>
+  </head>
+  <body>
+    <!-- body: home button -->
+        <div id="home">
+          <a href="index.html">←</a>
+        </div>
+    <!-- body: camera -->
+        <div id="cam_container">
+          <video autoplay="true" id="cam_element" value="true" onloadedmetadata="text_function()">
+          </video>
+        </div>
+    <!-- body: text -->
+        <div id="text_container">
+          <div id="overall_text">
+              <div id="word1">
+                <span id="t19">m</span><span id="t20">e</span>
+              </div>
+              <div id="word2">
+                <span id="t17">t</span><span id="t18">o</span>
+              </div>
+              <div id="word3">
+                <span id="t9">h</span><span id="t10">a</span><span id="t11">p</span><span id="t12">p</span><span id="t13">e</span><span id="t14">n</span><span id="t15">e</span><span id="t16">d</span>
+              </div>
+              <div id="word4">
+                <span id="t5">e</span><span id="t6">v</span><span id="t7">e</span><span id="t8">r</span>
+              </div>
+              <div id="word5">
+                <span id="t1">W</span><span id="t2">h</span><span id="t3">a</span><span id="t4">t</span>
+              </div>
+          </div>
+        </div>
+        <script>
+        //webcam function
+        var video = document.querySelector("#cam_element");
+
+        if (navigator.mediaDevices.getUserMedia) {
+          navigator.mediaDevices.getUserMedia({video:true})
+          .then(function (stream) {
+            video.srcObject = stream;
+            document.querySelector("cam_container").value="false";
+          })
+          .catch(function (err0r) {
+            console.log("Something went wrong!");
+          });
+        }
+        //fade in for background
+        function fadein_bg() {
+          document.getElementById("text_container").classList.add("fadein_bg");
+        }
+        //text pop-ups (using "fadein_bg" since it's the same duration)
+        function fadein_1() {
+          document.getElementById("t1").classList.add("fadein_bg");
+        }
+        function fadein_2() {
+          document.getElementById("t2").classList.add("fadein_bg");
+        }
+        function fadein_3() {
+          document.getElementById("t3").classList.add("fadein_bg");
+        }
+        function fadein_4() {
+          document.getElementById("t4").classList.add("fadein_bg");
+        }
+        function fadein_5() {
+          document.getElementById("t5").classList.add("fadein_bg");
+        }
+        function fadein_6() {
+          document.getElementById("t6").classList.add("fadein_bg");
+        }
+        function fadein_7() {
+          document.getElementById("t7").classList.add("fadein_bg");
+        }
+        function fadein_8() {
+          document.getElementById("t8").classList.add("fadein_bg");
+        }
+        function fadein_9() {
+          document.getElementById("t9").classList.add("fadein_bg");
+        }
+        function fadein_10() {
+          document.getElementById("t10").classList.add("fadein_bg");
+        }
+        function fadein_11() {
+          document.getElementById("t11").classList.add("fadein_bg");
+        }
+        function fadein_12() {
+          document.getElementById("t12").classList.add("fadein_bg");
+        }
+        function fadein_13() {
+          document.getElementById("t13").classList.add("fadein_bg");
+        }
+        function fadein_14() {
+          document.getElementById("t14").classList.add("fadein_bg");
+        }
+        function fadein_15() {
+          document.getElementById("t15").classList.add("fadein_bg");
+        }
+        function fadein_16() {
+          document.getElementById("t16").classList.add("fadein_bg");
+        }
+        function fadein_17() {
+          document.getElementById("t17").classList.add("fadein_bg");
+        }
+        function fadein_18() {
+          document.getElementById("t18").classList.add("fadein_bg");
+        }
+        function fadein_19() {
+          document.getElementById("t19").classList.add("fadein_bg");
+        }
+        function fadein_20() {
+          document.getElementById("t20").classList.add("fadein_bg");
+        }
+        function fadein_21() {
+          document.getElementById("t21").classList.add("fadein_bg");
+        }
+        function fadeout_master() {
+          document.getElementById("overall_text").classList.add("fadeout_txt");
+        }
+        function fadein_master() {
+          setTimeout (function() {
+            fadeout_master();
+          }, 27000 /* +15 sec 36000 */);
+          setTimeout(function() {
+            fadein_21();
+          }, 21000);
+          setTimeout(function() {
+            fadein_20();
+          }, 12000);
+          setTimeout(function() {
+            fadein_19();
+          }, 12000);
+          setTimeout(function() {
+            fadein_18();
+          }, 7000);
+          setTimeout(function() {
+            fadein_17();
+          }, 7000);
+          setTimeout(function() {
+            fadein_16();
+          }, 5000);
+          setTimeout(function() {
+            fadein_15();
+          }, 5000);
+          setTimeout(function() {
+            fadein_14();
+          }, 5000);
+          setTimeout(function() {
+            fadein_13();
+          }, 5000);
+          setTimeout(function() {
+            fadein_12();
+          }, 5000);
+          setTimeout(function() {
+            fadein_11();
+          }, 5000);
+          setTimeout(function() {
+            fadein_10();
+          }, 5000);
+          setTimeout(function() {
+            fadein_9();
+          }, 5000);
+          setTimeout(function() {
+            fadein_8();
+          }, 3000);
+          setTimeout(function() {
+            fadein_7();
+          }, 3000);
+          setTimeout(function() {
+            fadein_6();
+          }, 3000);
+          setTimeout(function() {
+            fadein_5();
+          }, 3000);
+          setTimeout(function() {
+            fadein_4();
+          }, 1000);
+          setTimeout(function() {
+            fadein_3();
+          }, 1000);
+          setTimeout(function() {
+            fadein_2();
+          }, 1000);
+          setTimeout(function() {
+            fadein_1();
+          }, 1000);
+        }
+        function text_function() {
+          setTimeout(function () {
+            fadein_bg();
+          }, 7000);
+          setTimeout(function () {
+            fadein_master();
+          }, 8500);
+        }
+        </script>
+  </body>
+</html>
